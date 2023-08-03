@@ -23,7 +23,7 @@ export default async function Blog() {
     <>
       <PageIntro eyebrow="Blog" title="Die neuesten Artikel und Neuigkeiten">
         <p>
-            Bleiben Sie mit den neuesten Branchennachrichten auf dem Laufenden.
+            Bleibe mit den neuesten Branchennachrichten auf dem Laufenden.
         </p>
       </PageIntro>
 

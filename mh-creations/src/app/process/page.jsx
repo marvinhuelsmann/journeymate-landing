@@ -81,9 +81,6 @@ function Build() {
     <Section title="Entwickeln" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Wir arbeiten eng mit unseren Kunden zusammen, um ihre Bedürfnisse und Ziele zu verstehen und integrieren uns in ihre täglichen Abläufe, um zu verstehen, wie ihr Unternehmen tickt.
-        </p>
-        <p>
           Wir leuchten dein Unternehmen wie Privatdetektiven aus, um das perfekte Design deiner neuer Webseite erstellen zu können.
         </p>
         <p>

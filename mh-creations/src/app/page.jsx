@@ -17,7 +17,7 @@ import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.sv
 import logoMH from '@/images/LogoMH.svg'
 import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
-import imageLaptop from '@/images/laptop.jpg'
+import imageLaptop from '@/images/macbook.jpeg'
 import { loadMDXMetadata } from '@/lib/loadMDXMetadata'
 
 const clients = [
