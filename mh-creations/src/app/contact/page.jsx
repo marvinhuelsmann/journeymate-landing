@@ -1,4 +1,5 @@
-import { useId } from 'react'
+'use client'
+import {useId, useState} from 'react'
 import Link from 'next/link'
 
 import { Border } from '@/components/Border'
@@ -41,48 +42,6 @@ function RadioInput({ label, ...props }) {
       />
       <span className="text-base/6 text-neutral-950">{label}</span>
     </label>
-  )
-}
-
-function ContactForm() {
-  return (
-    <FadeIn className="lg:order-last">
-      <form>
-        <h2 className="font-display text-base font-semibold text-neutral-950">
-          Interesse geweckt?
-        </h2>
-        <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-          <TextInput label="Name" name="name" autoComplete="name" />
-          <TextInput
-            label="E-Mail"
-            type="email"
-            name="email"
-            autoComplete="email"
-          />
-          <TextInput
-            label="Unternehmen"
-            name="company"
-            autoComplete="organization"
-          />
-          <TextInput label="Telefonnummer" type="tel" name="phone" autoComplete="tel" />
-          <TextInput label="Nachricht" name="message" />
-          <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
-            <fieldset>
-              <legend className="text-base/6 text-neutral-500">Preis Budget</legend>
-              <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                <RadioInput label="600 – 1.500€" name="budget" value="25" />
-                <RadioInput label="1.500 – 5.000€" name="budget" value="50" />
-                <RadioInput label="5.000 – 25.000€" name="budget" value="100" />
-                <RadioInput label="Über 25.000€" name="budget" value="150" />
-              </div>
-            </fieldset>
-          </div>
-        </div>
-        <Button type="submit" className="mt-10">
-          Zusammen arbeiten
-        </Button>
-      </form>
-    </FadeIn>
   )
 }
 
@@ -130,12 +89,31 @@ function ContactDetails() {
   )
 }
 
-export const metadata = {
-  title: 'Kontaktiere uns',
-  description: 'Lass uns zusammen in Hamm arbeiten. Wir können es kaum erwarten, von Ihnen zu hören und dir eine personalisierte Website zu erschaffen.',
-}
 
 export default function Contact() {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [tel, setTel] = useState('')
+    const [message, setMessage] = useState('')
+    const [company, setCompany] = useState('')
+    const [error, setError] = useState(false)
+
+    const openMailClient = (e) => {
+        e.preventDefault()
+        console.log('Open Client')
+
+        let data = {
+            name,
+            email,
+            message
+        }
+
+        if (name !== '' || tel !== '' || email !== '' || message !== '') {
+            window.location.href = "mailto:kontakt@marvhuelsmann.com?subject=" + name + " von " + company + " - " +  tel +   " - " + data.email + "&body=" + data.message;
+        } else {
+            setError(true)
+        }
+    }
   return (
     <>
       <PageIntro eyebrow="Kontaktiere uns" title="Zusammen arbeiten">
@@ -144,7 +122,45 @@ export default function Contact() {
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <div className="grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2">
-          <ContactForm />
+            <FadeIn className="lg:order-last">
+                <form method={"POST"}>
+                    <h2 className="font-display text-base font-semibold text-neutral-950">
+                        Interesse geweckt?
+                    </h2>
+                    <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
+                        <TextInput label="Name" name="name" autoComplete="name"   onChange={(e)=>{setName(e.target.value)}} />
+                        <TextInput
+                            label="E-Mail"
+                            type="email"
+                            name="email"
+                            autoComplete="email"
+                            onChange={(e)=>{setEmail(e.target.value)}}
+                        />
+                        <TextInput
+                            label="Unternehmen"
+                            name="company"
+                            autoComplete="organization"
+                            onChange={(e)=>{setCompany(e.target.value)}}
+                        />
+                        <TextInput label="Telefonnummer" type="tel" name="phone" autoComplete="tel"   onChange={(e)=>{setTel(e.target.value)}}/>
+                        <TextInput label="Nachricht" name="message"   onChange={(e)=>{setMessage(e.target.value)}}/>
+                        <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
+                            <fieldset>
+                                <legend className="text-base/6 text-neutral-500">Preis Budget</legend>
+                                <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                                    <RadioInput label="600 – 1.500€" name="budget" value="25" />
+                                    <RadioInput label="1.500 – 5.000€" name="budget" value="50" />
+                                    <RadioInput label="5.000 – 25.000€" name="budget" value="100" />
+                                    <RadioInput label="Über 25.000€" name="budget" value="150" />
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <Button onClick={(e)=>{openMailClient(e)}} type="submit" className="mt-10">
+                        Zusammen arbeiten
+                    </Button>
+                </form>
+            </FadeIn>
           <ContactDetails />
         </div>
       </Container>

@@ -4,6 +4,7 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Logo } from '@/components/Logo'
 import { socialMediaProfiles } from '@/components/SocialMedia'
+import {useState} from "react";
 
 const navigation = [
  /* {
@@ -79,8 +80,21 @@ function ArrowIcon(props) {
 }
 
 function NewsletterForm() {
+  const [email, setEmail] = useState('')
+
+  const openMailClient = (e) => {
+    e.preventDefault()
+
+    let data = {
+      email,
+    }
+
+    if (email !== "") {
+      window.location.href = "mailto:kontakt@marvhuelsmann.com?subject=Newsletter Abo Anfrage von " + data.email + "&body=Ich möchte den Newsletter folgen, da...?";
+    }
+  }
   return (
-    <form className="max-w-sm">
+    <form method={"POST"} className="max-w-sm">
       <h2 className="font-display text-sm font-semibold tracking-wider text-neutral-950">
         Melde dich für unseren Newsletter an.
       </h2>
@@ -89,6 +103,7 @@ function NewsletterForm() {
       </p>
       <div className="relative mt-6">
         <input
+            onChange={(e)=>{setEmail(e.target.value)}}
           type="email"
           placeholder="E-Mail Adresse"
           autoComplete="email"
@@ -97,6 +112,7 @@ function NewsletterForm() {
         />
         <div className="absolute inset-y-1 right-1 flex justify-end">
           <button
+              onClick={(e)=>{openMailClient(e)}}
             type="submit"
             aria-label="Submit"
             className="flex aspect-square h-full items-center justify-center rounded-xl bg-neutral-950 text-white transition hover:bg-neutral-800"

@@ -66,8 +66,11 @@ function Header({
           />
         </Link>
         <div className="flex items-center gap-x-8">
-          <Button href="/contact" invert={invert}>
+          <Button className={"xl:block md:block hidden"} href="/contact" invert={invert}>
             Kontaktiere uns
+          </Button>
+          <Button className={"xl:hidden md:hidden block"} href="/contact" invert={invert}>
+            Hai!
           </Button>
           <button
             ref={toggleRef}
