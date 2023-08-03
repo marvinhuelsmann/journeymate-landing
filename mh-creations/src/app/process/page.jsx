@@ -84,7 +84,7 @@ function Build() {
           Wir arbeiten eng mit unseren Kunden zusammen, um ihre Bedürfnisse und Ziele zu verstehen und integrieren uns in ihre täglichen Abläufe, um zu verstehen, wie ihr Unternehmen tickt.
         </p>
         <p>
-          Wir leuchten dein Unternehmen wie "Privatdetektiven" aus, um das perfekte Design deiner neuer Webseite erstellen zu können.
+          Wir leuchten dein Unternehmen wie Privatdetektiven aus, um das perfekte Design deiner neuer Webseite erstellen zu können.
         </p>
         <p>
           Mit diesem Wissen integrieren wir uns nahtlos in ihre täglichen Abläufe und gestalten maßgeschneiderte Lösungen, die das volle Potenzial deines Unternehmens entfesseln. Gemeinsam setzen wir die Weichen für nachhaltigen Erfolg und innovative Wachstumschancen.
