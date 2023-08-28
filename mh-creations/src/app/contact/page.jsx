@@ -148,10 +148,10 @@ export default function Contact() {
                             <fieldset>
                                 <legend className="text-base/6 text-neutral-500">Preis Budget</legend>
                                 <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                                    <RadioInput label="600 – 1.500€" name="budget" value="25" />
-                                    <RadioInput label="1.500 – 5.000€" name="budget" value="50" />
-                                    <RadioInput label="5.000 – 25.000€" name="budget" value="100" />
-                                    <RadioInput label="Über 25.000€" name="budget" value="150" />
+                                    <RadioInput label="400 – 800€" name="budget" value="25" />
+                                    <RadioInput label="800 – 1.200€" name="budget" value="50" />
+                                    <RadioInput label="1.200 – 3.000€" name="budget" value="100" />
+                                    <RadioInput label="Über 3.000€" name="budget" value="150" />
                                 </div>
                             </fieldset>
                         </div>
