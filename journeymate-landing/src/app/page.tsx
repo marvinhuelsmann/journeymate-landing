@@ -21,7 +21,7 @@ export default function Home() {
             <Image
               src={MHCreationsLogo}
               alt="Vercel Logo"
-              className="dark:invert"
+              className="invert"
               width={100}
               height={24}
               priority
