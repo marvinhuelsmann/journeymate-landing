@@ -6,19 +6,20 @@ import Head from "next/head";
 const inter = Inter({ subsets: ['latin'] })
 
 
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <>
-    <Head>
-      <meta name="apple-itunes-app" content="app-id=6448196185"/>
-    </Head>
-      <html lang={"en"}>
+      <>
+        <Head>
+          <meta name="apple-itunes-app" content="app-id=6448196185" />
+        </Head>
+    <html lang="en">
       <body className={inter.className}>{children}</body>
-      </html>
-    </>
+    </html>
+      </>
   )
 }
