@@ -2,25 +2,12 @@ import AppIcon from '../../public/images/JourneyMateAppIcon.svg'
 import MHCreationsLogo from '../../public/images/MHCreationsLogo.svg'
 import Image from 'next/image'
 import Head from 'next/head';
-import {Metadata} from "next";
 
-const metadata: Metadata = {
-    title: 'JourneyMate - iOS App',
-    description: 'In JourneyMate kannst du deiner aktuellen Stadt eine persönliche Stimmung geben und diese mit einem JourneyFoto in deinem öffentlichen Profil verewigen.',
-}
-
-const Page: React.FC = () => {
-    const metadata: Metadata = {
-        title: 'JourneyMate - iOS App',
-        description: 'In JourneyMate kannst du deiner aktuellen Stadt eine persönliche Stimmung geben und diese mit einem JourneyFoto in deinem öffentlichen Profil verewigen.',
-    }
-
+function Page() {
     return (
         <>
             <Head>
-                {metadata}
-                <meta name="apple-itunes-app" content="app-id=6448196185" />
-
+                <meta name="apple-itunes-app" content="app-id=6448196185, affiliate-data=6448196185, app-arguments=6448196185" />
             </Head>
             <div>
                 <main className="flex min-h-screen flex-col items-center justify-between p-24">
