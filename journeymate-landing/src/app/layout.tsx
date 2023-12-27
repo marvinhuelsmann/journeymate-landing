@@ -17,9 +17,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-       <Head>
-           <meta name="apple-itunes-app" content="app-id=6448196185"/>
-       </Head>
       <body className={inter.className}>{children}</body>
     </html>
   )
