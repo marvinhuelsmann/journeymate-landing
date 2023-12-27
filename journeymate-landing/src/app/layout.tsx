@@ -12,11 +12,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <>
     <Head>
       <meta name="apple-itunes-app" content="app-id=6448196185"/>
     </Head>
+      <html lang={"en"}>
       <body className={inter.className}>{children}</body>
-    </html>
+      </html>
+    </>
   )
 }
