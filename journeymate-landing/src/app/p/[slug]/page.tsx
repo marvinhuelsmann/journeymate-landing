@@ -11,7 +11,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
                 const timeout = setTimeout(() => {
                         router.push('https://apps.apple.com/us/app/journeymate/id6448196185').then(r => console.log("push"));
-                }, 2000);
+                }, 1000);
 
                 window.addEventListener('unload', () => clearTimeout(timeout));
         };
