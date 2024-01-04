@@ -10,7 +10,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 window.location.href = 'journeymate://journeymate.eu/post/' + params.slug;
 
                 const timeout = setTimeout(() => {
-                        router.push('https://apps.apple.com/us/app/journeymate/id6448196185').then(r => console.log("push"));
+                        window.location.href = 'https://apps.apple.com/us/app/journeymate/id6448196185'
                 }, 1000);
 
                 window.addEventListener('unload', () => clearTimeout(timeout));
